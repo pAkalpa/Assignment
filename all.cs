@@ -5,6 +5,7 @@
  * @Last Modified time: 2020-11-07 00:46:57
  */
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 class fAssignment
@@ -16,13 +17,18 @@ class fAssignment
         string doB = Console.ReadLine();
         string gendr = Console.ReadLine().ToUpper();
 
+        Stopwatch s1 = new Stopwatch();
+		s1.Start();
+
         fAssignment f1 = new fAssignment();//create Object
 
         string snme = f1.surName_FisGen(sname);//call surName_FisGen Method
         string nme = f1.Name_FisGen(name);//call Name_FisGen Method
-        string dob = f1.doBGendr_FisGen(doB,gendr);
+        string dobgendr = f1.doBGendr_FisGen(doB,gendr);
 
-        Console.WriteLine(snme + nme + dob);
+        Console.WriteLine("Fiscal Code is {0}",snme + nme + dobgendr);
+        s1.Stop();
+        Console.WriteLine("Total Execution Time {0} Milliseconds",s1.Elapsed.TotalMilliseconds);
     }
 
     string surName_FisGen (string a)//Surname Code Generator Method 

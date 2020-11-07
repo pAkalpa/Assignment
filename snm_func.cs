@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 public class surName
 {
-    public string surName_FisGen (string a)//Surname Code Generator Method 
+    public string surName_FisGen(string a)//Surname Code Generator Method 
     {
         string ans = null;
         string nWv = null;
