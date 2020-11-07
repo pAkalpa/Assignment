@@ -41,8 +41,10 @@ class fAssignment
         //call dobgendr_FisGen Method and store value
         string dobngendr = f3.dobgendr_FisGen(d1.dobArr,d1.gArr);
 
+        //call Stopwatch Stop function
         s1.Stop();
         
+        //call displayData function 
         d1.displayData(sNcode,Ncode,dobngendr,s1.Elapsed.TotalMilliseconds);
     }
 
@@ -56,18 +58,20 @@ class fAssignment
     //Fill Array Method
     (string,string,string,string) fillArr()
     {
+        //hardcode first column
         string[,] uID = {{"Name"," "},{"Surname"," "},{"Gender"," "},{"Date of Birth"," "}};
-
+        //fill 2D Array using User Inputs
         for (int i = 0; i < uID.GetLength(0); i++)
         {
             Console.Write("Enter {0}: ",uID[i,0]);
             uID[i,1] = Console.ReadLine().ToUpper();
         }
+        //assign array elements to variables
         snArr = uID[1,1];
         nArr = uID[0,1];
         gArr = uID[2,1];
         dobArr = uID[3,1];
-
+        //return variables with value
         return(snArr,nArr,gArr,dobArr);
     }
 }

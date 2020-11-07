@@ -1,8 +1,19 @@
+/*
+ * @Author: Pasindu Akalpa 
+ * @Date: 2020-11-07 00:34:26 
+ * @Last Modified by: Pasindu Akalpa 
+ * @Last Modified time: 2020-11-07 00:34:26 
+ */
+/*
+ * This Class use for remove vowels from input string
+ * Ref:https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+ */
 using System.Text.RegularExpressions;
 
 public class surName
 {
-    public string surName_FisGen(string a)//Surname Code Generator Method 
+    //Surname Fiscal Code Generator Method 
+    public string surName_FisGen(string a)
     {
         string ans = null;
         string nWv = null;

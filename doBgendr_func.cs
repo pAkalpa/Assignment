@@ -1,8 +1,15 @@
+/*
+ * @Author: Pasindu Akalpa 
+ * @Date: 2020-11-07 00:34:26 
+ * @Last Modified by: Pasindu Akalpa 
+ * @Last Modified time: 2020-11-07 00:34:26 
+ */
 using System;
 
 public class doBGendr_FisGen
 {
-    public string dobgendr_FisGen(string a,string b)//Date of Birth & Gender Code Generator Method
+    //Date of Birth & Gender Fiscal Code Generator Method
+    public string dobgendr_FisGen(string a,string b)
     {
         string ans = null;
         string year = null;
@@ -13,7 +20,12 @@ public class doBGendr_FisGen
         string[] dateD = a.Split('/');
         string dateN = string.Concat(dateD[1]+'/'+dateD[0]+'/'+dateD[2]);
         int dayOb = int.Parse(dateD[0]);
+        /*
+         * This tstruct is used for Validate Date
+         * Ref:https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1
+         */
         DateTime dateValue;
+        //Validate Date
 		if(DateTime.TryParse(dateN, out dateValue))
 		{
 			year = dateD[2].Remove(0,2);
@@ -56,6 +68,7 @@ public class doBGendr_FisGen
                     mCode = "T";
                 break;
             }
+            //Gender Validate
             if (b == "M" || b == "F")
             {
                 if (b == "M")
@@ -64,10 +77,10 @@ public class doBGendr_FisGen
                     {
                         dob = "0"+dateD[0];
                     }
-                }
-                else
-                {
-                    dob = dateD[0];
+                    else
+                    {
+                        dob = dateD[0];
+                    }
                 }
 
                 if (b == "F")
